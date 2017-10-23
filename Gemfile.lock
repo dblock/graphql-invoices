@@ -45,9 +45,21 @@ GEM
     crass (1.0.2)
     diff-lcs (1.3)
     erubi (1.7.0)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    graphlient (0.0.7)
+      faraday
+      faraday_middleware
+      graphql-client
+    graphql (1.7.4)
+    graphql-client (0.12.1)
+      activesupport (>= 3.0, < 6.0)
+      graphql (~> 1.6)
     i18n (0.9.0)
       concurrent-ruby (~> 1.0)
     listen (3.1.5)
@@ -65,6 +77,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    multipart-post (2.0.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -151,6 +164,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  graphlient
+  graphql
   listen
   rails (~> 5.1.4)
   rspec-rails
