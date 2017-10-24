@@ -4,3 +4,4 @@
 !/log/.keep
 !/tmp/.keep
 db/*
+data/*
