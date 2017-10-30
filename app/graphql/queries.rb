@@ -22,19 +22,19 @@ Query = GraphQL::ObjectType.define do
   # handling ActiveRecord and Standard errors
   field :rescueFromActiveRecordRecordNotFound, InvoiceType do
     argument :id, !types.Int
-    resolve Rescuable.new ->(_object, args, _ctx) {
+    resolve ->(_object, args, _ctx) {
       Invoice.where(id: args[:id]).first
     }
   end
 
   field :rescueFromActiveRecordRecordInvalid, InvoiceType do
-    resolve Rescuable.new ->(_object, _args, _ctx) {
+    resolve ->(_object, _args, _ctx) {
       Invoice.create!
     }
   end
 
   field :rescueFromStandardError, InvoiceType do
-    resolve Rescuable.new ->(_object, _args, _ctx) {
+    resolve ->(_object, _args, _ctx) {
       raise 'Something went wrong.'
     }
   end
