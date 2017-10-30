@@ -5,7 +5,7 @@ CreateInvoiceMutation = GraphQL::Relay::Mutation.define do
   return_type InvoiceType
 
   resolve ->(_object, inputs, _ctx) {
-    OpenStruct.new(
+    Invoice.new(
       id: 1231,
       fee_in_cents: inputs[:fee_in_cents]
     )
