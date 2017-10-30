@@ -7,7 +7,7 @@ class Rescuable
 
   def call(obj, args, ctx)
     resolve_func.call(obj, args, ctx)
-  rescue ActiveRecord::RecordNotFound => e
+  rescue ActiveRecord::RecordNotFound
     nil
   rescue ActiveRecord::RecordInvalid => e
     error_messages = e.record.errors.full_messages.join("\n")

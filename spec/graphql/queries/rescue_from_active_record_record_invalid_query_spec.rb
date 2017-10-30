@@ -15,7 +15,7 @@ describe 'Rescue from ActiveRecord::RecordInvalid Query', type: :request do
 
   it 'handles ActiveRecord::RecordInvalid and returns error' do
     expect do
-      result = client.execute(query)
+      client.execute(query)
     end.to raise_error Graphlient::Errors::ExecutionError, "rescueFromActiveRecordRecordInvalid: Validation failed: Fee in cents can't be blank."
   end
 end

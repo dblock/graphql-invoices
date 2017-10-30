@@ -15,7 +15,7 @@ describe 'Rescue from StandardError', type: :request do
 
   it 'handles StandardError and returns error' do
     expect do
-      result = client.execute(query)
+      client.execute(query)
     end.to raise_error Graphlient::Errors::ExecutionError, 'rescueFromStandardError: Something went wrong.'
   end
 end
