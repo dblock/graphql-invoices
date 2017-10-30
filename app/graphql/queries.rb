@@ -11,4 +11,10 @@ Query = GraphQL::ObjectType.define do
       )
     }
   end
+
+  field :executionError, InvoiceType do
+    resolve ->(_object, _inputs, _ctx) {
+      GraphQL::ExecutionError.new('This has not been implemented yet.')
+    }
+  end
 end
