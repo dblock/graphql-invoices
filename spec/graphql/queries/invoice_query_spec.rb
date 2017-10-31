@@ -20,4 +20,10 @@ describe 'Invoice Query', type: :request do
     expect(invoice.id).to eq 42
     expect(invoice.fee_in_cents).to eq 20_000
   end
+
+  it 'returns an error for a missing ID' do
+    expect do
+      client.execute(query)
+    end.to raise_error Graphlient::Errors::GraphQLError, "Variable id of type Int! was provided invalid value\n  : Expected value to not be null"
+  end
 end
